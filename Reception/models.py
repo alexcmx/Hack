@@ -14,10 +14,14 @@ class Customers(models.Model):
 class Orders(models.Model):
     customer = models.ForeignKey(Customers, on_delete=models.PROTECT)
     Order_Id = models.CharField(max_length=20, default="NONE")
-    count = models.IntegerField(default=1)
-    money = models.IntegerField(default=0)
-    amount = models.IntegerField(default=0)
+    count = models.IntegerField(default=-1)
+    money = models.IntegerField(default=-1)
+    amount = models.IntegerField(default=-1)
+    cell = models.OneToOneField(on_delete=models.SET_NULL, null=True, blank=True)
 
 class Product(models.Model):
     order = models.ForeignKey(Orders, on_delete=models.PROTECT)
     name = models.CharField(max_length=255, default="Default")
+
+class Cells(models.Model):
+    empty = models.BooleanField(default=True)
