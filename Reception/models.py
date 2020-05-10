@@ -3,6 +3,9 @@ from django.core.validators import RegexValidator
 
 # Create your models here.
 
+class Cells(models.Model):
+    empty = models.BooleanField(default=True)
+
 class Customers(models.Model):
     fio = models.CharField(max_length=255)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$')
@@ -16,12 +19,16 @@ class Orders(models.Model):
     Order_Id = models.CharField(max_length=20, default="NONE")
     count = models.IntegerField(default=-1)
     money = models.IntegerField(default=-1)
-    amount = models.IntegerField(default=-1)
-    cell = models.OneToOneField(on_delete=models.SET_NULL, null=True, blank=True)
+    cell = models.OneToOneField(Cells, on_delete=models.SET_NULL, null=True, blank=True)
+
+Ch = (
+    ('1', 'Доставлен'),
+    ('2', 'Возвращен'),
+    ('3', 'Выдан'),
+)
 
 class Product(models.Model):
     order = models.ForeignKey(Orders, on_delete=models.PROTECT)
     name = models.CharField(max_length=255, default="Default")
+    status = models.CharField(max_length=1, choices=Ch, default="1")
 
-class Cells(models.Model):
-    empty = models.BooleanField(default=True)
