@@ -1,0 +1,56 @@
+.dws{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.butt{
+    border: 3px solid #87d6b9;
+    font-size: 30px;
+    color: #471173;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 250px;
+    height: 60px;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    font-family: Arial,sans-serif;
+    position: relative;
+    transition: .5s;
+    overflow: hidden;
+}
+.butt::before,
+.butt::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #87d6b9;
+    top: 0;
+    left: -100%;
+    opacity: .5;
+    transition: .3s;
+    z-index: -1;
+}
+.butt::after{
+    opacity: 1;
+    transition-delay: .2s;
+}
+.butt:hover{
+    color: #471173;
+}
+.butt:hover::before,
+.butt::after{
+    left: 0;
+}
+.pic{
+    position: absolute;
+    top: 0%;
+    left: 42%;
+}

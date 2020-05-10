@@ -2469,16 +2469,11 @@ header{
 
     </style>
 <title>AvHack</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" href="css1/font-awesome.css" type="text/css">
+<
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div align="center" class="Приём">
-        <p><b>Приём</p></b>
-      <div class="dws">
-   Ячейка номер: {{ Num }}
-    </div>
+  <div class="Приём">
+        <p><b>Выдача</p></b>
     </div>
 
 
@@ -2501,8 +2496,20 @@ header{
         </p>
     </div>
 
+<div id="wrapper">
+    <form method="POST" action="/take/">
+    {% csrf_token %}
+        <div align="center" style="margin: 50px 0px 30px 0px">
+            {{ form.order.label }}
+            {{ form.order }}
+        </div>
 
-
-
+        <div align="center">
+            <input type="submit" class="butt" value="Сохранить"/>
+        </div>
+    </form>
+    </div>
 </body>
 </html>
+
+

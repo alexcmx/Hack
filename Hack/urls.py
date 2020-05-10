@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Reception.views import recv
+from Reception.views import recv,take, marks,back
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',recv),
+    path('take/', take),
+    path('marks/', marks),
+    path('back/', back),
 ]

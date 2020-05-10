@@ -2469,16 +2469,11 @@ header{
 
     </style>
 <title>AvHack</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" href="css1/font-awesome.css" type="text/css">
+<
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div align="center" class="Приём">
-        <p><b>Приём</p></b>
-      <div class="dws">
-   Ячейка номер: {{ Num }}
-    </div>
+  <div class="Приём">
+        <p><b>Выдача</p></b>
     </div>
 
 
@@ -2501,8 +2496,29 @@ header{
         </p>
     </div>
 
-
-
-
+<div id="wrapper">
+    {{ done }}
+ФИО:
+{{ fio }}
+Пасспорт:
+{{ pass }}
+Ячейка номер:
+{{ cell }}
+{% if target|length > 0 %}
+На складе:
+{% endif %}
+{% for tar in target %}
+{{ tar }}
+{% endfor %}
+{% if target2|length > 0 %}Еще не прибыли:
+{% endif %}
+{% for tar in target2 %}
+{{ tar }}
+{% endfor %}
+    </div>
 </body>
 </html>
+
+
+
+

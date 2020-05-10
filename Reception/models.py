@@ -11,8 +11,7 @@ class Customers(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$')
     phone_number = models.CharField(validators=[phone_regex], max_length=17,
                                     blank=True)
-    series = models.CharField(max_length=20)
-    number = models.CharField(max_length=20)
+    passport = models.CharField(max_length=100,null=True, blank=True)
 
 class Orders(models.Model):
     customer = models.ForeignKey(Customers, on_delete=models.PROTECT)
@@ -22,6 +21,7 @@ class Orders(models.Model):
     cell = models.OneToOneField(Cells, on_delete=models.SET_NULL, null=True, blank=True)
 
 Ch = (
+    ('0', "Не на складе"),
     ('1', 'Доставлен'),
     ('2', 'Возвращен'),
     ('3', 'Выдан'),
