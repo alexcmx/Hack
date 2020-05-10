@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     {% load static %}
+    <style>
+        body{
+            background-image: url({% static "image/back.jpg" %});
+            background-size: 110%;
+        }
+    </style>
+
     <meta charset="utf-8">
     <style>
         .dws{
@@ -2469,9 +2476,9 @@ header{
 
     </style>
 <title>AvHack</title>
-<
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
+<body background="{% static 'image/back.jpg' %}">
   <div class="Приём">
         <p><b>Выдача</p></b>
     </div>

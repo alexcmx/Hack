@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     {% load static %}
+    <style>
+        body{
+            background-image: url({% static "image/back.jpg" %});
+            background-size: 110%;
+        }
+    </style>
+
     <meta charset="utf-8">
     <style>
         .mine{
-            margin: 20px 0px 20px 0px; font-size: 25px; font-family: 'Cuprum';
+            margin: 10px 0px 10px 0px; font-size: 22px; font-family: 'Cuprum';
+            padding: 5px;
         }
         .mine2{
-            margin: 20px 0px 20px 0px; font-size: 28px; font-family: 'Cuprum'; color: rgba(12,6,15,0.85)
+            padding: 5px;
+            margin: 10px 0px 10px 0px; font-size: 25px; font-family: 'Cuprum'; color: rgba(12,6,15,0.85)
         }
         .dws{
     position: relative;
@@ -122,6 +131,7 @@ header{
     position: absolute;
     top: 35%;
     left: 25%;
+    background-color: #79aec8;
 }
 .Приём{
     position: absolute;
@@ -2478,6 +2488,7 @@ header{
 <
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
+<body background="{% static 'image/back.jpg' %}">
   <div class="Приём">
         <p><b>Выдача</p></b>
     </div>

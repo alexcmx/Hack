@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     {% load static %}
+    <style>
+        body{
+            background-image: url({% static "image/back.jpg" %});
+            background-size: 110%;
+        }
+    </style>
+
     <meta charset="utf-8">
     <style>
         .dws{
@@ -2473,7 +2480,7 @@ header{
 <link rel="stylesheet" href="css1/font-awesome.css" type="text/css">
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
-<body>
+<body background="{% static 'image/back.jpg' %}">
   <div align="center" class="Приём">
         <p><b>Приём</p></b>
       <div class="dws">

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <HTML lang="en">
 <HEAD>
+  {% load static %}
+    <style>
+        body{
+            background-image: url({% static "image/back.jpg" %});
+            background-size: 110%;
+        }
+    </style>
 
 <meta charset="utf-8">
 <title>AvHack</title>
@@ -9,10 +16,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../../static/css/style2.css">
 
-
+{% load static %}
 </HEAD>
 
-<BODY>
+<BODY background="{% static 'image/back.jpg' %}">
 
     <div class="dws">
         <a href="#" class="butt">Выполнить</a>
@@ -52,7 +59,7 @@
             <input type="text" placeholder="№ Заказа" required autofocus>
         </p>
         <p>
-            <input type="reset" value="Очистить поля"
+            <input type="reset" value="Очистить поля">
         </p>
     </form>
 </div>
