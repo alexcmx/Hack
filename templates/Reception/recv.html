@@ -7,6 +7,14 @@
             background-image: url({% static "image/back.jpg" %});
             background-size: 110%;
         }
+        .mine{
+            margin: 10px 0px 10px 0px; font-size: 22px; font-family: 'Cuprum';
+            padding: 5px;
+        }
+        .mine2{
+            padding: 5px;
+            margin: 10px 0px 10px 0px; font-size: 25px; font-family: 'Cuprum'; color: rgba(12,6,15,0.85)
+        }
     </style>
 
     <meta charset="utf-8">
@@ -2501,7 +2509,7 @@ header{
 
     <div class="pic">
         <p>
-            <img src="url({% static 'image/wb.png' %})" width="250px"  alt="logo">
+            <img src="{% static 'image/wb.png' %}" width="250px"  alt="logo">
         </p>
     </div>
 
@@ -2509,8 +2517,9 @@ header{
     <form method="POST" action="/">
     {% csrf_token %}
         <div align="center" style="margin: 50px 0px 30px 0px">
-        {{ form.product.label }}
-            {{ form.product }}
+            <div class="mine">{{ form.product.label }}  {{ form.product }}</div>
+
+
         </div>
 
         <div align="center">
