@@ -4,6 +4,12 @@
     {% load static %}
     <meta charset="utf-8">
     <style>
+        .mine{
+            margin: 20px 0px 20px 0px; font-size: 25px; font-family: 'Cuprum';
+        }
+        .mine2{
+            margin: 20px 0px 20px 0px; font-size: 28px; font-family: 'Cuprum'; color: rgba(12,6,15,0.85)
+        }
         .dws{
     position: relative;
     top: 70%;
@@ -115,7 +121,7 @@ header{
 #wrapper{
     position: absolute;
     top: 35%;
-    left: 45%;
+    left: 25%;
 }
 .Приём{
     position: absolute;
@@ -2497,24 +2503,31 @@ header{
     </div>
 
 <div id="wrapper">
-    {{ done }}
-ФИО:
-{{ fio }}
-Пасспорт:
-{{ pass }}
-Ячейка номер:
-{{ cell }}
+    <div class="mine">{{ done }} </div>
+    <div class="mine2">ФИО:</div>
+
+<div class="mine">{{ fio }} </div>
+<div class="mine2">Пасспорт:</div>
+
+<div class="mine">{{ pass }} </div>
+<div class="mine2">Ячейка номер:</div>
+
+<div class="mine">{{ cell }} </div>
 {% if target|length > 0 %}
-На складе:
+    <div class="mine2">На складе:</div>
+
 {% endif %}
 {% for tar in target %}
-{{ tar }}
+<div class="mine">{{ tar }} </div>
 {% endfor %}
-{% if target2|length > 0 %}Еще не прибыли:
+{% if target2|length > 0 %}
+    <div class="mine2">    Еще не прибыли:</div>
+
 {% endif %}
 {% for tar in target2 %}
-{{ tar }}
+<div class="mine">{{ tar }} </div>
 {% endfor %}
+
     </div>
 </body>
 </html>
