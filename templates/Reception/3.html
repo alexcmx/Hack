@@ -11,10 +11,10 @@
 
 <meta charset="utf-8">
 <title>AvHack</title>
-<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
-<link rel="stylesheet" href="../../static/css1/font-awesome.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css1/font-awesome.css' %}" type="text/css">
 <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../../static/css/style3.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
 
 
 
@@ -22,9 +22,6 @@
 
 <BODY>
 
-    <div class="dws">
-        <a href="#" class="butt">Отчёт</a>
-    </div>
 
    
     <header>
@@ -40,9 +37,13 @@
 
     <div class="pic">
         <p>
-            <img src="../../static/image/wb.png " width="250px" alt="logo">
+            <img src="{% static 'image/wb.png' %}" width="250px" alt="logo">
         </p>
-    </div> 
+    </div>
+
+    <div style="position: relative; top: 140px" align="center">
+        <a href="#" class="butt" >Отчёт</a>
+    </div>
 
 </BODY>
 
